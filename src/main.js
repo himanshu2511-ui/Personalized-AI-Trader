@@ -1,3 +1,4 @@
+import './style.css';
 import { createIcons, icons } from 'lucide';
 import { MOCK_ASSETS, generateHistoricalData, generateNextTick } from './data.js';
 import { initChart, updateChartData, updateChartTick, addSMASeries, clearSmaSeries } from './chart.js';
