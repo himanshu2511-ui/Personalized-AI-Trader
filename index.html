@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalized AI Trader</title>
+    <!-- Modern font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Glow Elements for Background -->
+      <div class="ambient-glow glow-blue"></div>
+      <div class="ambient-glow glow-purple"></div>
+
+      <!-- Header -->
+      <header class="app-header glass-panel">
+        <div class="brand">
+          <i data-lucide="brain-circuit" class="brand-icon"></i>
+          <h1>AI Trader</h1>
+        </div>
+        <div class="nav-stats">
+          <div class="stat-pill"><i data-lucide="wallet"></i> $<span id="nav-portfolio-value">100,000.00</span></div>
+          <div class="stat-pill"><i data-lucide="trending-up"></i> <span id="nav-win-rate">0.00</span>% Win Rate</div>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <!-- Sidebar: Assets -->
+        <aside class="sidebar glass-panel">
+          <h2>Assets</h2>
+          <ul id="asset-list" class="asset-list">
+            <!-- Asset items will be injected here -->
+          </ul>
+        </aside>
+
+        <!-- Center: Chart & History -->
+        <section class="center-stage">
+          <div class="chart-container glass-panel">
+            <div class="panel-header">
+              <h2 id="current-asset-title">Select an Asset</h2>
+              <div class="chart-controls">
+                <button class="btn-icon" title="Indicators"><i data-lucide="activity"></i></button>
+              </div>
+            </div>
+            <div id="chart-mount" class="chart-mount"></div>
+          </div>
+
+          <div class="bottom-panel glass-panel">
+            <div class="panel-header">
+              <h2>Open Positions & Trade History</h2>
+            </div>
+            <div class="table-container">
+              <table id="trade-history-table">
+                <thead>
+                  <tr>
+                    <th>Asset</th>
+                    <th>Type</th>
+                    <th>Entry</th>
+                    <th>Size</th>
+                    <th>P&L</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="trade-history-body">
+                  <!-- Trade rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Sidebar: AI Insights & Trading -->
+        <aside class="right-panel">
+          <div class="ai-panel glass-panel">
+            <div class="panel-header glowing-header">
+              <h2><i data-lucide="cpu"></i> AI Analysis</h2>
+              <span class="pulse-indicator"></span>
+            </div>
+            <div class="ai-content">
+              <div id="ai-recommendation" class="recommendation-box">
+                <span class="signal-label">Signal</span>
+                <h3 id="ai-signal" class="signal-value text-neutral">HOLD</h3>
+                <div class="confidence-bar-container">
+                  <div class="confidence-bar glass-inner">
+                    <div id="ai-confidence-fill" class="confidence-fill"></div>
+                  </div>
+                  <span id="ai-confidence-text" class="confidence-text">0% Confidence</span>
+                </div>
+              </div>
+              <div class="ai-details grid-2">
+                <div class="detail-item">
+                  <span class="label">Target</span>
+                  <span class="value" id="ai-target">--</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Stop Loss</span>
+                  <span class="value" id="ai-stop">--</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Trend</span>
+                  <span class="value" id="ai-trend">Neutral</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Risk</span>
+                  <span class="value" id="ai-risk">Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trading-panel glass-panel">
+            <div class="panel-header">
+              <h2><i data-lucide="arrow-right-left"></i> Execute Trade</h2>
+            </div>
+            <div class="trading-content">
+              <div class="portfolio-summary glass-inner">
+                <span class="label">Available Balance</span>
+                <h3 class="value" id="trade-balance">$100,000.00</h3>
+              </div>
+              <div class="trade-controls">
+                <div class="input-group">
+                  <label for="trade-size">Position Size (Shares/Coins)</label>
+                  <input type="number" id="trade-size" class="glass-input" value="1" min="0.01" step="0.01">
+                </div>
+                <div class="action-buttons">
+                  <button id="btn-buy" class="btn btn-buy">BUY</button>
+                  <button id="btn-sell" class="btn btn-sell">SELL</button>
+                </div>
+                <button id="btn-close-position" class="btn btn-close hidden">CLOSE POSITION</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
