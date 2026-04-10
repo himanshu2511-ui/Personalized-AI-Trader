@@ -47,6 +47,7 @@ npm install
 npm run dev
 ```
 4. Open your browser and navigate to the local host address provided (typically `http://localhost:5173`).
+5. Visit:  https://personalized-ai-trader.vercel.app/ for experiencing the AI signals and make trades.
 
 ---
 *An excellent showcase for Algorithmic Trading, Frontend Development with Domain Expertise, and AI-powered Tools.*
